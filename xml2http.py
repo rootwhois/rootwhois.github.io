@@ -17,6 +17,6 @@ file = open('baidu_urls.txt', 'w')
 for url in root.iter('{http://www.w3.org/2005/Atom}id'):
     # print(url.text)
     url.text = url.text.replace('https://', 'https://www.')
-    file.write(url.text + '\r')
+    file.write(url.text + '\n')
 file.close()
 
