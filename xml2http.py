@@ -17,7 +17,7 @@ file_name='sitemap.xml'
 r=urllib.request.Request(url, headers=hdr)
 u=urllib.request.urlopen(r)
 html=u.read()
-html=html.decode('utf-8')
+html=html.decode('gbk')
 with open(file_name, 'w') as f:
     f.write(html)
 
