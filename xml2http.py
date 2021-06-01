@@ -14,8 +14,8 @@ hdr = {
 
 url='https://blog.rootwhois.cn/sitemap.xml'
 file_name='sitemap.xml'
-u=urllib.request.urlopen(url, headers=hdr)
-print(u.getcode())
+r=urllib.request.Request(url, headers=hdr)
+u=urllib.request.urlopen(r)
 html=u.read()
 html=html.decode('utf-8')
 with open(file_name, 'w') as f:
