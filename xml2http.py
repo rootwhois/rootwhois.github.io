@@ -15,11 +15,8 @@ file_name='sitemap.xml'
 
 r = urllib.request.Request(site, headers=hdr)
 response = urllib.request.urlopen(r)
-page = response.read()
+res = response.read().decode('utf-8')
 
-buff = BytesIO(page)
-f = gzip.GzipFile(fileobj=buff)
-res = f.read().decode('utf-8')
 
 with open(file_name, 'w') as f:
     f.write(res)
