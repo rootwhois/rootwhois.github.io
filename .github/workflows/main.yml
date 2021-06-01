@@ -31,8 +31,8 @@ jobs:
     - name: Make commits
       run: |
           python3 xml2http.py
-          curl -H 'Content-Type:text/plain' --data-binary @baidu_urls.txt "http://data.zz.baidu.com/urls?site=www.rootwhois.cn&token=K8olbxZhTru7OSxH"
-          rm -rf atom.xml
+          curl -H 'Content-Type:text/plain' --data-binary @baidu_urls.txt "http://data.zz.baidu.com/urls?site=blog.rootwhois.cn&token=K8olbxZhTru7OSxH"
+          rm -rf sitemap.xml
           date >> time.txt
           git config --global user.name "Github Action"
           git config --global user.email "action@github.com"
