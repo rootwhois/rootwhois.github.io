@@ -1,4 +1,4 @@
-name: Sync repo
+name: Get sitemap
 
 on:
 #   push:
@@ -31,7 +31,7 @@ jobs:
     - name: Make commits
       run: |
           python3 xml2http.py
-          curl -H 'Content-Type:text/plain' --data-binary @baidu_urls.txt " ${{ secrets.BAIDU_TOKEN}}"
+          curl -H 'Content-Type:text/plain' --data-binary @baidu_urls.txt "${{ secrets.BAIDU_TOKEN}}"
           rm -rf sitemap.xml
           date >> time.txt
           git config --global user.name "Github Action"
