@@ -5,7 +5,9 @@ import re
 import xml.etree.cElementTree as et
 url='https://blog.rootwhois.cn/sitemap.xml'
 file_name='sitemap.xml'
-html=urllib.request.urlopen(url).read()
+u=urllib.request.urlopen(url)
+print(u.getcode())
+html=u.read()
 html=html.decode('utf-8')
 with open(file_name, 'w') as f:
     f.write(html)
